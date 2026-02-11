@@ -1,0 +1,14 @@
+{
+  "name": "classroom-booking-app",
+  "version": "1.0.0",
+  "description": "Arvutiklasside kasutuse andmebaasirakendus",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts",
+    "seed": "bun run src/seed.ts"
+  },
+  "dependencies": {
+    "hono": "^4.7.0",
+    "postgres": "^3.4.5"
+  }
+}

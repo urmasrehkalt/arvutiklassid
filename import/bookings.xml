@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookings>
+  <booking>
+    <classroom>A201</classroom>
+    <user>Mart Tamm</user>
+    <lesson_type>Loeng</lesson_type>
+    <date>2026-02-09</date>
+    <start_time>08:00</start_time>
+    <end_time>09:30</end_time>
+    <participants>28</participants>
+    <description>Programmeerimise loeng</description>
+  </booking>
+  <booking>
+    <classroom>A201</classroom>
+    <user>TAK25</user>
+    <lesson_type>Praktikum</lesson_type>
+    <date>2026-02-09</date>
+    <start_time>10:00</start_time>
+    <end_time>11:30</end_time>
+    <participants>25</participants>
+    <description>Veebiarenduse praktikum</description>
+  </booking>
+  <booking>
+    <classroom>A202</classroom>
+    <user>Liis Kask</user>
+    <lesson_type>Praktikum</lesson_type>
+    <date>2026-02-09</date>
+    <start_time>12:00</start_time>
+    <end_time>13:30</end_time>
+    <participants>22</participants>
+    <description>Andmebaaside praktikum</description>
+  </booking>
+  <booking>
+    <classroom>B101</classroom>
+    <user>Andres Mägi</user>
+    <lesson_type>Loeng</lesson_type>
+    <date>2026-02-10</date>
+    <start_time>08:00</start_time>
+    <end_time>09:30</end_time>
+    <participants>18</participants>
+    <description>IT-aluste loeng</description>
+  </booking>
+  <booking>
+    <classroom>B305</classroom>
+    <user>Mart Tamm</user>
+    <lesson_type>Praktikum</lesson_type>
+    <date>2026-02-10</date>
+    <start_time>10:00</start_time>
+    <end_time>13:00</end_time>
+    <participants>30</participants>
+    <description>Tarkvaraarenduse praktikum</description>
+  </booking>
+  <booking>
+    <classroom>C110</classroom>
+    <user>TAK24</user>
+    <lesson_type>Seminar</lesson_type>
+    <date>2026-02-11</date>
+    <start_time>14:00</start_time>
+    <end_time>15:30</end_time>
+    <participants>12</participants>
+    <description>Projekti seminar</description>
+  </booking>
+  <booking>
+    <classroom>C215</classroom>
+    <user>Liis Kask</user>
+    <lesson_type>Loeng</lesson_type>
+    <date>2026-02-11</date>
+    <start_time>08:00</start_time>
+    <end_time>11:00</end_time>
+    <participants>38</participants>
+    <description>Programmeerimise loeng</description>
+  </booking>
+  <booking>
+    <classroom>A201</classroom>
+    <user>TARpe24</user>
+    <lesson_type>Praktikum</lesson_type>
+    <date>2026-02-12</date>
+    <start_time>10:00</start_time>
+    <end_time>11:30</end_time>
+    <participants>20</participants>
+    <description>Arvutivõrkude praktikum</description>
+  </booking>
+</bookings>

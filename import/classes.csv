@@ -1,0 +1,7 @@
+name,building,floor,capacity,has_projector
+A201,A-korpus,2,30,true
+A202,A-korpus,2,25,true
+B101,B-korpus,1,20,false
+B305,B-korpus,3,35,true
+C110,C-korpus,1,15,true
+C215,C-korpus,2,40,true

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Mart Tamm",
+        "email": "mart.tamm@kool.ee",
+        "role": "teacher"
+    },
+    {
+        "name": "Liis Kask",
+        "email": "liis.kask@kool.ee",
+        "role": "teacher"
+    },
+    {
+        "name": "Andres Mägi",
+        "email": "andres.magi@kool.ee",
+        "role": "teacher"
+    },
+    {
+        "name": "TAK25",
+        "email": null,
+        "role": "group"
+    },
+    {
+        "name": "TAK24",
+        "email": null,
+        "role": "group"
+    },
+    {
+        "name": "TARpe24",
+        "email": null,
+        "role": "group"
+    }
+]
