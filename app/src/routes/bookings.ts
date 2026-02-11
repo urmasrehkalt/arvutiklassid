@@ -6,7 +6,7 @@ const bookings = new Hono();
 
 // ==================== LIST ====================
 bookings.get("/", async (c) => {
-    const rows = await sql`
+  const rows = await sql`
     SELECT b.id, b.booking_date, b.start_time, b.end_time,
            b.participants, b.description,
            cl.name AS classroom_name,
@@ -19,11 +19,11 @@ bookings.get("/", async (c) => {
     ORDER BY b.booking_date DESC, b.start_time ASC
   `;
 
-    const tableRows = rows
-        .map(
-            (r) => `
+  const tableRows = rows
+    .map(
+      (r) => `
     <tr>
-      <td>${r.booking_date}</td>
+      <td>${new Date(r.booking_date).toLocaleDateString("et-EE")}</td>
       <td>${r.classroom_name}</td>
       <td>${r.user_name}</td>
       <td>${r.start_time?.toString().slice(0, 5)} – ${r.end_time?.toString().slice(0, 5)}</td>
@@ -37,12 +37,12 @@ bookings.get("/", async (c) => {
         </form>
       </td>
     </tr>`
-        )
-        .join("");
+    )
+    .join("");
 
-    const html = layout(
-        "Broneeringud",
-        `
+  const html = layout(
+    "Broneeringud",
+    `
     <h1>Broneeringud</h1>
     <p style="margin-bottom:1rem">
       <a href="/bookings/new" class="btn btn-primary">+ Lisa uus broneering</a>
@@ -64,19 +64,19 @@ bookings.get("/", async (c) => {
       </tbody>
     </table>
   `
-    );
-    return c.html(html);
+  );
+  return c.html(html);
 });
 
 // ==================== NEW FORM ====================
 bookings.get("/new", async (c) => {
-    const classrooms = await sql`SELECT id, name FROM classroom ORDER BY name`;
-    const users = await sql`SELECT id, name, role FROM user_or_group ORDER BY name`;
-    const lessonTypes = await sql`SELECT id, name FROM lesson_type ORDER BY name`;
+  const classrooms = await sql`SELECT id, name FROM classroom ORDER BY name`;
+  const users = await sql`SELECT id, name, role FROM user_or_group ORDER BY name`;
+  const lessonTypes = await sql`SELECT id, name FROM lesson_type ORDER BY name`;
 
-    const html = layout(
-        "Uus broneering",
-        `
+  const html = layout(
+    "Uus broneering",
+    `
     <h1>Lisa uus broneering</h1>
     <div class="form-card">
       <form method="POST" action="/bookings">
@@ -126,15 +126,15 @@ bookings.get("/new", async (c) => {
       </form>
     </div>
   `
-    );
-    return c.html(html);
+  );
+  return c.html(html);
 });
 
 // ==================== CREATE ====================
 bookings.post("/", async (c) => {
-    const body = await c.req.parseBody();
-    try {
-        await sql`
+  const body = await c.req.parseBody();
+  try {
+    await sql`
       INSERT INTO booking (classroom_id, user_id, lesson_type_id, booking_date, start_time, end_time, participants, description)
       VALUES (
         ${Number(body.classroom_id)},
@@ -147,27 +147,27 @@ bookings.post("/", async (c) => {
         ${(body.description as string) || null}
       )
     `;
-        return c.redirect("/");
-    } catch (err: any) {
-        return c.html(
-            layout("Viga", `<div class="alert alert-error">Viga: ${err.message}</div><a href="/bookings/new" class="btn btn-primary">Tagasi</a>`)
-        );
-    }
+    return c.redirect("/");
+  } catch (err: any) {
+    return c.html(
+      layout("Viga", `<div class="alert alert-error">Viga: ${err.message}</div><a href="/bookings/new" class="btn btn-primary">Tagasi</a>`)
+    );
+  }
 });
 
 // ==================== EDIT FORM ====================
 bookings.get("/:id/edit", async (c) => {
-    const id = Number(c.req.param("id"));
-    const [booking] = await sql`SELECT * FROM booking WHERE id = ${id}`;
-    if (!booking) return c.html(layout("Ei leitud", `<div class="alert alert-error">Broneeringut ei leitud</div>`), 404);
+  const id = Number(c.req.param("id"));
+  const [booking] = await sql`SELECT * FROM booking WHERE id = ${id}`;
+  if (!booking) return c.html(layout("Ei leitud", `<div class="alert alert-error">Broneeringut ei leitud</div>`), 404);
 
-    const classrooms = await sql`SELECT id, name FROM classroom ORDER BY name`;
-    const users = await sql`SELECT id, name, role FROM user_or_group ORDER BY name`;
-    const lessonTypes = await sql`SELECT id, name FROM lesson_type ORDER BY name`;
+  const classrooms = await sql`SELECT id, name FROM classroom ORDER BY name`;
+  const users = await sql`SELECT id, name, role FROM user_or_group ORDER BY name`;
+  const lessonTypes = await sql`SELECT id, name FROM lesson_type ORDER BY name`;
 
-    const html = layout(
-        "Muuda broneeringut",
-        `
+  const html = layout(
+    "Muuda broneeringut",
+    `
     <h1>Muuda broneeringut #${booking.id}</h1>
     <div class="form-card">
       <form method="POST" action="/bookings/${booking.id}">
@@ -215,16 +215,16 @@ bookings.get("/:id/edit", async (c) => {
       </form>
     </div>
   `
-    );
-    return c.html(html);
+  );
+  return c.html(html);
 });
 
 // ==================== UPDATE ====================
 bookings.post("/:id", async (c) => {
-    const id = Number(c.req.param("id"));
-    const body = await c.req.parseBody();
-    try {
-        await sql`
+  const id = Number(c.req.param("id"));
+  const body = await c.req.parseBody();
+  try {
+    await sql`
       UPDATE booking SET
         classroom_id   = ${Number(body.classroom_id)},
         user_id        = ${Number(body.user_id)},
@@ -236,19 +236,19 @@ bookings.post("/:id", async (c) => {
         description    = ${(body.description as string) || null}
       WHERE id = ${id}
     `;
-        return c.redirect("/");
-    } catch (err: any) {
-        return c.html(
-            layout("Viga", `<div class="alert alert-error">Viga: ${err.message}</div><a href="/bookings/${id}/edit" class="btn btn-primary">Tagasi</a>`)
-        );
-    }
+    return c.redirect("/");
+  } catch (err: any) {
+    return c.html(
+      layout("Viga", `<div class="alert alert-error">Viga: ${err.message}</div><a href="/bookings/${id}/edit" class="btn btn-primary">Tagasi</a>`)
+    );
+  }
 });
 
 // ==================== DELETE ====================
 bookings.post("/:id/delete", async (c) => {
-    const id = Number(c.req.param("id"));
-    await sql`DELETE FROM booking WHERE id = ${id}`;
-    return c.redirect("/");
+  const id = Number(c.req.param("id"));
+  await sql`DELETE FROM booking WHERE id = ${id}`;
+  return c.redirect("/");
 });
 
 export default bookings;

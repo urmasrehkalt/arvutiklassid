@@ -7,31 +7,31 @@
     "total_hours": "4.5"
   },
   {
-    "name": "C215",
-    "building": "C-korpus",
-    "capacity": 40,
-    "booking_count": "2",
-    "total_hours": "4.5"
-  },
-  {
     "name": "B305",
     "building": "B-korpus",
     "capacity": 35,
-    "booking_count": "2",
-    "total_hours": "4.0"
+    "booking_count": "1",
+    "total_hours": "3.0"
   },
   {
-    "name": "A202",
-    "building": "A-korpus",
-    "capacity": 25,
-    "booking_count": "2",
-    "total_hours": "3.5"
+    "name": "C215",
+    "building": "C-korpus",
+    "capacity": 40,
+    "booking_count": "1",
+    "total_hours": "3.0"
+  },
+  {
+    "name": "C110",
+    "building": "C-korpus",
+    "capacity": 15,
+    "booking_count": "1",
+    "total_hours": "1.5"
   },
   {
     "name": "B101",
     "building": "B-korpus",
     "capacity": 20,
-    "booking_count": "2",
-    "total_hours": "3.0"
+    "booking_count": "1",
+    "total_hours": "1.5"
   }
 ]
