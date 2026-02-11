@@ -52,6 +52,9 @@ Ava brauseris: **http://localhost:3000**
 ### Broneeringute loend
 ![Broneeringute loend](screenshots/bookings_list.png)
 
+### Uue broneeringu lisamine
+![Uus broneering](screenshots/uus_broneering.png)
+
 ### Statistikavaade
 ![Statistika](screenshots/statistics.png)
 
