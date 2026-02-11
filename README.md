@@ -45,7 +45,7 @@ cd app
 bun run dev
 ```
 
-Ava brauseris: **http://localhost:3000**
+Ava brauseris: **http://localhost:3010**
 
 ## Ekraanipildid
 
@@ -81,7 +81,7 @@ database_new/
 │   ├── package.json
 │   ├── tsconfig.json
 │   └── src/
-│       ├── index.ts            # Server (port 3000)
+│       ├── index.ts            # Server (port 3010)
 │       ├── db.ts               # DB ühendus
 │       ├── seed.ts             # Näidisandmed
 │       ├── routes/

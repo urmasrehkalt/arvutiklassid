@@ -11,9 +11,9 @@ app.route("/statistics", statistics);
 // Home → redirect to bookings list
 app.get("/", (c) => c.redirect("/bookings"));
 
-console.log("🖥️  Arvutiklasside broneeringud käivitunud: http://localhost:3000");
+console.log("🖥️  Arvutiklasside broneeringud käivitunud: http://localhost:3010");
 
 export default {
-    port: 3000,
+    port: 3010,
     fetch: app.fetch,
 };
