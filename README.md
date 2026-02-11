@@ -111,7 +111,7 @@ database_new/
 docker exec -i classroom_db psql -U admin -p 5432 classroom_booking < permissions.sql
 ```
 
-Vt lähemalt: `permissions.md`
+Vt lähemalt: [permissions.md](permissions.md)
 
 ## Varundamine
 
@@ -123,4 +123,4 @@ docker exec classroom_db pg_dump -U admin classroom_booking > backup/backup_2026
 docker exec -i classroom_db psql -U admin classroom_booking < backup/backup_2026-02-11.sql
 ```
 
-Vt lähemalt: `backup/backup_restore.md`
+Vt lähemalt: [backup_restore.md](backup/backup_restore.md)
