@@ -47,6 +47,14 @@ bun run dev
 
 Ava brauseris: **http://localhost:3000**
 
+## Ekraanipildid
+
+### Broneeringute loend
+![Broneeringute loend](screenshots/bookings_list.png)
+
+### Statistikavaade
+![Statistika](screenshots/statistics.png)
+
 ## Projekti struktuur
 
 ```
