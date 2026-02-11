@@ -23,7 +23,7 @@ bookings.get("/", async (c) => {
     .map(
       (r) => `
     <tr>
-      <td>${new Date(r.booking_date).toLocaleDateString("et-EE")}</td>
+      <td>${(() => { const d = new Date(r.booking_date); return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`; })()}</td>
       <td>${r.classroom_name}</td>
       <td>${r.user_name}</td>
       <td>${r.start_time?.toString().slice(0, 5)} – ${r.end_time?.toString().slice(0, 5)}</td>
