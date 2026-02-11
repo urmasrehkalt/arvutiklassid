@@ -58,6 +58,14 @@ Ava brauseris: **http://localhost:3000**
 ### Statistikavaade
 ![Statistika](screenshots/statistics.png)
 
+## Diagrammid
+
+### ERD (Crow's Foot)
+![ERD](erd_crowsfoot.png)
+
+### UML klassidiagramm
+![UML](uml_class.png)
+
 ## Projekti struktuur
 
 ```
